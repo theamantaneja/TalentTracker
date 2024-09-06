@@ -1,2 +1,5 @@
 Flask
 flask-cors
+python-dotenv
+PyPDF2
+google-generativeai
