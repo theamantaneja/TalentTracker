@@ -21,6 +21,7 @@ const ResumeAnalyzer = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+            console.log("Response from backend:", response.data);
             setAnalysisResult(response.data);
         } catch (error) {
             console.error("Error analyzing resume:", error);
