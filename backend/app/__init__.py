@@ -3,8 +3,14 @@ from flask_cors import CORS
 from .routes import main
 
 def create_app():
+    
+    LOCAL = "http://localhost:5173"
+    PRODUCTION = ""
+    
     app = Flask(__name__)
-    CORS(app, resources={r"/analyze": {"origins": "https://curveaismartats.vercel.app"}})
-  # Enable CORS for all routes
-    app.register_blueprint(main)
+
+    # Enable CORS for specified origins
+    CORS(app, resources={r"/analyze": {"origins": LOCAL}})  # Adjust as needed
+
+    app.register_blueprint(main)  # Register the routes
     return app
